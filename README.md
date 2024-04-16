@@ -1,4 +1,4 @@
-Disease Prediction Web App using Streamlit and Heroku
+Multiple Disease Prediction Web App using Streamlit and Heroku
 
 
 This repository contains code for a web application that predicts multiple diseases including diabetes, heart disease, Parkinson's disease, and breast cancer. The application is built using Streamlit for the user interface and deployed on Heroku.
