@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run Web_App_Hroku.py
