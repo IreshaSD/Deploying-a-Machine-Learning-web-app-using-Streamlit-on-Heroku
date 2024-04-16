@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run Web_App_Hroku.py
+web: sh setup.sh && streamlit run app.py
