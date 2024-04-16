@@ -20,7 +20,9 @@ Breast Cancer Prediction: Predicts whether a person has breast cancer based on f
 Usage:
 
 Select the disease prediction model from the sidebar menu.
+
 Enter the required input parameters.
+
 Click on the "Test Result" button to view the prediction.
 
 
