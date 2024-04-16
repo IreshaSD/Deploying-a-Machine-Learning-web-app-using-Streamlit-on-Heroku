@@ -6,5 +6,5 @@ scikit-learn==1.0.1
 protobuf==3.20.1
 altair==4.1.0
 pickles
-sklearn.pipeline 
-sklearn.preprocessing
+scikit-learn.pipeline 
+scikit-learn.preprocessing
