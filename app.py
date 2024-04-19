@@ -13,6 +13,12 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
+import os
+import streamlit as st
+
+# Add this line to specify the port
+port = os.environ.get('PORT', 8501)
+
 # Loading the saved models
 
 diabetes_model = pickle.load(open('Diabetes_Pipeline.sav','rb'))
