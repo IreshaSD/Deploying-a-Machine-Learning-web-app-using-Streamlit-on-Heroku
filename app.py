@@ -20,15 +20,12 @@ heart_disease_model = pickle.load(open('Heart_Disease_Pipeline.sav','rb'))
 parkinsons_model = pickle.load(open('Parkinsons_Pipeline .sav','rb'))
 breast_cancer_model = pickle.load(open('Breast_Cancer_Pipeline.sav','rb'))
 
-
-# Sidebar for navigate
-
-
-
 # Sidebar for navigate
 
 with st.sidebar:
-
+    
+    
+   
     selected = option_menu('Multiple Disease Prediction System using ML',
 
                            ["Diabetes Prediction",
@@ -36,7 +33,7 @@ with st.sidebar:
                            "Parkinsons Prediction",
                            "Breast Cancer Predictions"],
 
-                           icons = ['activity','heart-pulse-fill','person','person-standing-dress'],
+                           icons = ['activity','heart', 'person', 'bookmark-heart'],
                            default_index = 0) # This is the default starting page comes under option menu
 
 
