@@ -44,69 +44,40 @@ with st.sidebar:
 
 
 # 1. Diabetes Prediction Page
-# all_filled = True
-# input_data = []
 
 if (selected == 'Diabetes Prediction'):
 
     # Page title
     st.title('Diabetes Prediction Using ML')
 
-    
-    all_filled = True
-    input_data = []
-    
     # getting the input data from the user
     # columns for input fields
+
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        Pregnancies = st.text_input('Number of Pregnancies', key="Pregnancies")
-        if not Pregnancies:
-                all_filled = False
-                st.error("Please enter a value for Number of Pregnancies.")
+        Pregnancies = st.text_input('Number of Pregnancies')
 
     with col2:
-        Glucose = st.text_input("Glucose Level",key="Glucose")
-        if not Glucose:
-                all_filled = False
-                st.error("Please enter a value for Glucose Level.")
+        Glucose = st.text_input("Glucose Level")
 
     with col3:
-        BloodPressure = st.text_input('BloodPressure value',key="BloodPressure")
-        if not BloodPressure:
-            all_filled = False
-            st.error("Please enter a value for BloodPressure value.")
+        BloodPressure = st.text_input('BloodPressure value')
 
     with col1:
-        SkinThickness = st.text_input('Skin Thickness value ',key="SkinThickness")
-        if not SkinThickness:
-            all_filled = False
-            st.error("Please enter a value for SkinThickness value.")
+        SkinThickness = st.text_input('Skin Thickness value ')
 
     with col2:
-        Insulin = st.text_input('Insulin value',key="Insulin")
-        if not Insulin:
-            all_filled = False
-            st.error("Please enter a value for Insulin value.")
+        Insulin = st.text_input('Insulin value')
 
     with col3:
-        BMI = st.text_input('BMI value',key="BMI")
-        if not BMI:
-            all_filled = False
-            st.error("Please enter a value for BMI value.")
+        BMI = st.text_input('BMI value')
 
     with col1:
-        DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value',key="DiabetesPedigreeFunction")
-        if not DiabetesPedigreeFunction:
-            all_filled = False
-            st.error("Please enter a value for DiabetesPedigreeFunction value.")
-            
+        DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value')
+
     with col2:
-        Age = st.text_input('Age of the person',key="Age")
-        if not Age:
-            all_filled = False
-            st.error("Please enter a value for Age.")
+        Age = st.text_input('Age of the person')
 
     # Pregnancies = st.text_input('Number of Pregnancies')
     # Glucose = st.text_input("Glucose Level"  )
@@ -123,18 +94,20 @@ if (selected == 'Diabetes Prediction'):
     # creating a button for prediction
 
     if st.button('Diabetes Test Result'):
-        if all_filled:
-            input_data = [Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]
-            diab_prediction = diabetes_model.predict(np.asarray(input_data).reshape(1, -1))
-            if (diab_prediction[0]==1):
-                diab_diagnosis = 'The person is Diabetic'
-    
-            else:
-                diab_diagnosis = 'The person is not Diabetic'
-                
+
+        if not all([Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]):
+        st.warning('Please enter all values before proceeding.')
+        
+    else:
+        input_data = [Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]
+        diab_prediction = diabetes_model.predict(np.asarray(input_data).reshape(1, -1))
+        
+        
+        if (diab_prediction[0]==1):
+            diab_diagnosis = 'The person is Diabetic'
+
         else:
-            None
-            #st.warning('Please enter all values before proceeding.')
+            diab_diagnosis = 'The person is not Diabetic'
 
     st.success(diab_diagnosis)
     
