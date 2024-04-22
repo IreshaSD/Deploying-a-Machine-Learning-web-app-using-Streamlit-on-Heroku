@@ -96,18 +96,18 @@ if (selected == 'Diabetes Prediction'):
     if st.button('Diabetes Test Result'):
 
         if not all([Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]):
-        st.warning('Please enter all values before proceeding.')
+            st.warning('Please enter all values before proceeding.')
         
-    else:
-        input_data = [Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]
-        diab_prediction = diabetes_model.predict(np.asarray(input_data).reshape(1, -1))
-        
-        
-        if (diab_prediction[0]==1):
-            diab_diagnosis = 'The person is Diabetic'
-
         else:
-            diab_diagnosis = 'The person is not Diabetic'
+            input_data = [Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]
+            diab_prediction = diabetes_model.predict(np.asarray(input_data).reshape(1, -1))
+        
+        
+            if (diab_prediction[0]==1):
+                diab_diagnosis = 'The person is Diabetic'
+    
+            else:
+                diab_diagnosis = 'The person is not Diabetic'
 
     st.success(diab_diagnosis)
     
