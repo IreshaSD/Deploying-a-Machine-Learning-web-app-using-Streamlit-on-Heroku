@@ -172,7 +172,7 @@ if (selected == 'Heart  Disease Prediction'):
         #Heart_prediction = heart_disease_model.predict([[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]])
         #user_input = [int(age), sex, int(cp), int(trestbps), int(chol), fbs, restecg, int(thalach), exang, float(oldpeak), slope, ca, thal]
         
-        if not all([int(age), sex, int(cp), int(trestbps), int(chol), fbs, restecg, int(thalach), exang, float(oldpeak), slope, ca, thal]):
+        if not all([age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]):
             st.warning('Please enter all values before proceeding.')
             
         else:
