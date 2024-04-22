@@ -103,7 +103,7 @@ if (selected == 'Diabetes Prediction'):
             st.error("Please enter a value for DiabetesPedigreeFunction value.")
             
     with col2:
-        Age = st.text_input('Age of the person',,key="Age")
+        Age = st.text_input('Age of the person',key="Age")
         if not Age:
             all_filled = False
             st.error("Please enter a value for Age.")
